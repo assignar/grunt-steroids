@@ -20,7 +20,7 @@ module.exports = (grunt)->
 
   # Files starting with _ are used as view fragments and are not standalone views
   isFragment = (filename) ->
-    (filename.indexOf '_') is 0
+    (filename.indexOf '_') is 0 or /_[^\/]*?$/.test(filename)
 
   # List of modules that this module depends on - used for including JS files
   discoverModuleDependencies = (moduleName) ->
