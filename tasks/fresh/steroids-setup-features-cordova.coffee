@@ -16,18 +16,6 @@ module.exports = (grunt) ->
       pair.src.forEach (src) ->
         grunt.file.copy src, src,
           process: (contents) ->
-            contents.replace /"\/app/g, """\"../../app"""
-        count++
-    @files.forEach (pair) ->
-      pair.src.forEach (src) ->
-        grunt.file.copy src, src,
-          process: (contents) ->
-            contents.replace /\=\/app/g, '=../../app'
-        count++
-    @files.forEach (pair) ->
-      pair.src.forEach (src) ->
-        grunt.file.copy src, src,
-          process: (contents) ->
             contents.replace /"\/components/g, """\"../../components"""
         count++
     @files.forEach (pair) ->
