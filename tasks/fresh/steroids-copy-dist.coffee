@@ -4,14 +4,14 @@ module.exports = (grunt)->
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-extend-config"
 
-  grunt.registerTask "steroids-copy-www", "Copy files from www/ to dist/ (except for .scss and .coffee) (for SPA projects)", ->
+  grunt.registerTask "steroids-copy-dist", "Copy files from dist/ to www/ (except for .scss and .coffee) (for SPA projects)", ->
 
     grunt.extendConfig
       copy:
-        www:
+        dist:
           expand:true
-          cwd: 'www/'
+          cwd: 'dist/'
           src: ['**/*.*', '!**/*.coffee', '!**/*.scss']
-          dest: 'dist/'
+          dest: 'cordova/www/'
 
-    grunt.task.run "copy:www"
+    grunt.task.run "copy:dist"
