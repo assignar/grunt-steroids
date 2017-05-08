@@ -11,6 +11,5 @@ module.exports = (grunt) ->
       "steroids-compile-modules-cordova"
       "steroids-compile-sass"
       "steroids-copy-css"
-      "steroids-setup-features-cordova"
       "steroids-copy-dist"
     ]
